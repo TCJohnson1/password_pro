@@ -8,7 +8,7 @@ export default class AppRouter extends Component {
       render() {
             return (
                   <BrowserRouter>
-                  <div>
+                  <div className= "container">
                         <Switch>
                               <Route 
                               path="/" 
