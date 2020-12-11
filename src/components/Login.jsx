@@ -45,8 +45,7 @@ export default class Login extends Component {
             const {errorMessage} = this.state;
             return (
                   <div>
-                        <h1>Password Pro</h1>
-                        <h3>Login</h3>
+                        <h1>Login</h1>
                         <div className="login-form">
                         <form onSubmit={this.handleLogin}>
                         {errorMessage && errorMessage.signInError &&(
