@@ -58,7 +58,7 @@ export default class Register extends Component {
             const {errorMessage, loginMessage, isSubmitted} = this.state
             return (
                   <div>
-                        <h1>Create an Account</h1>
+                        <h2>Create an Account</h2>
                         <div className="login-form">
                         <form onSubmit={this.registerUser}>
                         {errorMessage && errorMessage.signUpError ? (
@@ -77,7 +77,7 @@ export default class Register extends Component {
                               type="first_name"
                               name="first_name"
                               id="first_name"
-                              placeholder="Enter Your First Name"
+                              placeholder="First Name"
                               onChange={this.handleChange}
                               />
                         </div>
@@ -87,7 +87,7 @@ export default class Register extends Component {
                               type="last_name"
                               name="last_name"
                               id="last_name"
-                              placeholder="Enter Your Last Name"
+                              placeholder="Last Name"
                               onChange={this.handleChange}
                               />
                         </div>
@@ -97,7 +97,7 @@ export default class Register extends Component {
                               type="email"
                               name="email"
                               id="email"
-                              placeholder="Enter Your Email"
+                              placeholder="Email"
                               onChange={this.handleChange}
                               />
                         </div>
@@ -107,7 +107,7 @@ export default class Register extends Component {
                               type="password"
                               name="password"
                               id="password"
-                              placeholder="Enter Your Password"
+                              placeholder="Password"
                               onChange={this.handleChange}
                               />
                         </div>
@@ -117,7 +117,7 @@ export default class Register extends Component {
                               type="password"
                               name="confirm_password"
                               id="password"
-                              placeholder="Confirm Your Password"
+                              placeholder="Confirm Password"
                               onChange={this.handleChange}
                               />
                         </div>
@@ -126,10 +126,12 @@ export default class Register extends Component {
                               type="submit" 
                               value="Register"
                               id="register"
+                              style={{backgroundColor: 'green', color: 'white'}}
                               />
+                              <br></br>
                               <Link to="/" 
                               className="login-link">
-                              Login
+                              Already registered? Login here
                               </Link>
                         </div>
                         </form>

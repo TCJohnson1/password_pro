@@ -4,10 +4,14 @@ import AppRouter from './router/AppRouter';
 import { Provider } from 'react-redux';
 import store from './store/store';
 import reportWebVitals from './reportWebVitals';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 ReactDOM.render(
   <Provider store={store}>
+    <Header />
     <AppRouter />
+    <Footer />
   </Provider>,
   document.getElementById('root')
 );

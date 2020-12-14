@@ -4,6 +4,7 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import Login from '../components/Login';
 import Register from '../components/Register';
 
+
 export default class AppRouter extends Component {
       render() {
             return (

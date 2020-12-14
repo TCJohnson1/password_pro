@@ -45,7 +45,7 @@ export default class Login extends Component {
             const {errorMessage} = this.state;
             return (
                   <div>
-                        <h1>Login</h1>
+                        <h2>Login</h2>
                         <div className="login-form">
                         <form onSubmit={this.handleLogin}>
                         {errorMessage && errorMessage.signInError &&(
@@ -57,7 +57,7 @@ export default class Login extends Component {
                               type="email" 
                               name="email" 
                               id="email" 
-                              placeholder="Provide an email address"
+                              placeholder="Email"
                               onChange={this.handleChange}
                               />
                         </div>
@@ -67,7 +67,7 @@ export default class Login extends Component {
                               type="password"
                               name="password"
                               id="password"
-                              placeholder="Enter your password"
+                              placeholder="Password"
                               onChange={this.handleChange}
                               />
                         </div>
@@ -76,7 +76,9 @@ export default class Login extends Component {
                               type="submit" 
                               value="Login"
                               id="login"
+                              style={{backgroundColor: 'blue', color: 'white'}}
                               />
+                              <br></br>
                               <Link to="/register" 
                               className="register-link">
                               Create Account
