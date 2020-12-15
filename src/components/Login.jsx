@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+// import {connect} from 'react-redux';
 import { validateFields } from '../utilities/validation';
 import { Link } from 'react-router-dom'
 // import Header from './Header'

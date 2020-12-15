@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import { validateFields } from '../utilities/validation'
 import { Link } from 'react-router-dom'
+import { registerNewUser} from '../actions/auth'
 
 export default class Register extends Component {
       state = {
@@ -43,6 +43,16 @@ export default class Register extends Component {
                         })
                   } else {
                         this.setState({ isSubmitted: true})
+                        this.props
+                        .dispatch(registerNewUser({ firstName, lastName, email, password}))
+                        .then((response) =>{
+                              if (response.success){
+                                    this.setState({
+                                          loginMessage: 'User registered successfully.',
+                                          errorMessage:''
+                                    })
+                              }
+                        })
                   }
             }
       }
