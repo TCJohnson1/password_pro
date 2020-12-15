@@ -1,7 +1,11 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 
-export default class AddAccount extends Component {
-      render() {
+const AddAccount = () => {
+
+            const [account, setAccount] = useState("");
+            const [username, setUsername] = useState("");
+            const [email, setEmail] = useState("");
+            const [password, setPassword] = useState("");
             return (
                   <div className="row mb-3">
                         <div className="w-50 mx-auto">
@@ -10,6 +14,7 @@ export default class AddAccount extends Component {
                                     class="col-sm-2 col-form-label col-form-label-sm">Account:</label>
                                     <div className="col-sm-10">
                                           <input type="text" 
+                                          value={account} onChange={e => setAccount(e.target.value)}
                                           class="form-control form-control-sm" 
                                           id="colFormLabelSm" 
                                           placeholder="Account"/>
@@ -18,6 +23,7 @@ export default class AddAccount extends Component {
                                           class="col-sm-2 col-form-label col-form-label-sm">Username:</label>
                                     <div className="col-sm-10">
                                           <input type="text" 
+                                          value={username} onChange={e => setUsername (e.target.value)}
                                           class="form-control form-control-sm" 
                                           id="colFormLabelSm" 
                                           placeholder="Username"/>
@@ -26,6 +32,7 @@ export default class AddAccount extends Component {
                                           class="col-sm-2 col-form-label col-form-label-sm">Email:</label>
                                     <div className="col-sm-10">
                                           <input type="email" 
+                                          value={email} onChange={e => setEmail(e.target.value)}
                                           class="form-control form-control-sm" 
                                           id="colFormLabelSm" 
                                           placeholder="Email"/>
@@ -34,6 +41,7 @@ export default class AddAccount extends Component {
                                           class="col-sm-2 col-form-label col-form-label-sm">Pasword:</label>
                                     <div className="col-sm-10">
                                           <input type="text" 
+                                          value={password} onChange={e => setPassword(e.target.value)}
                                           class="form-control form-control-sm" 
                                           id="colFormLabelSm" 
                                           placeholder="Password"/>
@@ -47,4 +55,5 @@ export default class AddAccount extends Component {
                   </div>
             )
       }
-}
+
+      export default AddAccount

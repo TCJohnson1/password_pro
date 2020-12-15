@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { AccountsContextProvider } from './context/AccountsContext';
 import Details from "./routes/Details"
 import Home from "./routes/Home"
 import Updates from "./routes/Updates"
@@ -8,6 +9,7 @@ import Updates from "./routes/Updates"
 export default class App extends Component {
   render() {
     return (
+      <AccountsContextProvider>
       <div className="container">
         <Router>
           <Route exact path="/" component={Home}/>
@@ -15,6 +17,7 @@ export default class App extends Component {
           <Route exact path="/passwords/:id/update" component={Updates}/>
         </Router>
       </div>
+      </AccountsContextProvider>
     )
   }
 }

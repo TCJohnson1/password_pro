@@ -1,7 +1,19 @@
-import React, { Component } from 'react'
+import React, { useEffect, useContext} from 'react'
+import PasswordPro from "../api/PasswordPro"
+import { AccountsContext } from '../context/AccountsContext'
 
-export default class AccountList extends Component {
-      render() {
+const AccountList = (props) => {
+      const {passwords, setPasswords} = useContext(AccountsContext)
+      useEffect(() => {
+            const fetchData = async () => {
+                  try{
+                        const response = await PasswordPro.get("/")
+                        console.log("response", response)
+                        setPasswords(response.data.data.passwords);
+                  } catch (err) {}
+            }
+            fetchData()
+      },[])
             return (
                   <div className="list-group">
                         <table className="table table-hover table-dark">
@@ -16,17 +28,26 @@ export default class AccountList extends Component {
                                     </tr>
                               </thead>
                               <tbody>
-                                    <tr>
-                                          <td>Twitter</td>
-                                          <td>@TwitterName</td>
-                                          <td>User@user.com</td>
-                                          <td>Password</td>
-                                          <td><button className="btn btn-secondary">Update</button></td>
-                                          <td><button className="btn btn-danger">Delete</button></td>
+                              {passwords && passwords.map((password) => {
+                                    return(
+                                          <tr key={password.id}> 
+                                          <td>{password.website}</td>
+                                          <td>{password.username}</td>
+                                          <td>{password.email}</td>
+                                          <td>{password.password}</td>
+                                          <td>
+                                                <button className="btn btn-secondary">Update</button>
+                                          </td>
+                                          <td>
+                                                <button className="btn btn-danger">Delete</button>
+                                          </td>
                                     </tr>
+                                    );
+                                    })}
                               </tbody>
                         </table>
                   </div>
             )
       }
-}
+
+      export default AccountList
