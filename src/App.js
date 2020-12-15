@@ -8,7 +8,7 @@ import Updates from "./routes/Updates"
 export default class App extends Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <Router>
           <Route exact path="/" component={Home}/>
           <Route exact path="/passwords/:website" component={Details}/>
