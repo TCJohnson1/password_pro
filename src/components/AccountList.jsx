@@ -14,6 +14,17 @@ const AccountList = (props) => {
             }
             fetchData()
       },[])
+
+      const handleDelete= async (id) => {
+            try {
+                  const response = await PasswordPro.delete(`/${id}`)
+                  setPasswords(passwords.filter(password => {
+                        return password.id !== id
+                  }))
+            }catch (err) {
+                  console.log(err)
+            }
+      }
             return (
                   <div className="list-group">
                         <table className="table table-hover table-dark">
@@ -39,7 +50,7 @@ const AccountList = (props) => {
                                                 <button className="btn btn-secondary">Update</button>
                                           </td>
                                           <td>
-                                                <button className="btn btn-danger">Delete</button>
+                                                <button onClick={() => handleDelete(password.id)} className="btn btn-danger">Delete</button>
                                           </td>
                                     </tr>
                                     );
