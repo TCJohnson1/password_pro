@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import AccountList from '../components/AccountList'
 import AddAccount from '../components/AddAccount'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
+
 import TestFooter from '../components/TestFooter'
 import TestHeader from '../components/TestHeader'
 

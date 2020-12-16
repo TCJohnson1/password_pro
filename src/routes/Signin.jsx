@@ -1,18 +1,15 @@
 import React, { Component } from 'react'
-import AccountUpdate from '../components/AccountUpdate'
 import TestFooter from '../components/TestFooter'
 import TestHeader from '../components/TestHeader'
+import SignForm from '../components/SignForm'
 
-export default class Updates extends Component {
+export default class Signin extends Component {
       render() {
             return (
                   <div>
                         <TestHeader/>
                         <br/>
-                        <br/>
-                        <h1 className="text-center"> Update Entry</h1>
-                        <AccountUpdate />
-                        <br/>
+                        <SignForm/>
                         <TestFooter/>
                   </div>
             )
