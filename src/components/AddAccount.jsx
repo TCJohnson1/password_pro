@@ -1,11 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import PasswordPro from "../api/PasswordPro"
+import {AccountsContext} from '../context/AccountsContext'
+
 
 const AddAccount = () => {
-
-            const [account, setAccount] = useState("");
+            const {addAccounts} = useContext(AccountsContext)
+            const [website, setWebsite] = useState("");
             const [username, setUsername] = useState("");
             const [email, setEmail] = useState("");
             const [password, setPassword] = useState("");
+
+            const handleSubmit = async (e) => {
+                  console.log(password)
+                  e.preventDefault()
+                  try{
+                        const response = await  PasswordPro.post("/", {
+                              website: website,
+                              username: username,
+                              email: email,
+                              password: password
+                        })
+                        addAccounts(response.data.data.password)
+                        console.log(response)
+                  } catch (err){
+                        console.log(err)
+                  }
+            }
             return (
                   <div className="row mb-3">
                         <div className="w-50 mx-auto">
@@ -14,7 +34,7 @@ const AddAccount = () => {
                                     class="col-sm-2 col-form-label col-form-label-sm">Account:</label>
                                     <div className="col-sm-10">
                                           <input type="text" 
-                                          value={account} onChange={e => setAccount(e.target.value)}
+                                          value={website} onChange={e => setWebsite(e.target.value)}
                                           class="form-control form-control-sm" 
                                           id="colFormLabelSm" 
                                           placeholder="Account"/>
@@ -48,7 +68,7 @@ const AddAccount = () => {
                                     </div>
                                     <br/>
                                     <div class="text-center">
-                                    <button type="button" class="btn btn-success btn-sm">Add Entry</button>
+                                    <button onClick={handleSubmit} type="submit" class="btn btn-success btn-sm">Add Entry</button>
                                     </div>
                         </form>
                         </div>
