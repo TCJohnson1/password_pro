@@ -17,10 +17,10 @@ const AccountUpdate = (props) => {
             const fetchData = async() => {
                   const response = await PasswordPro.get(`/${id}`);
                   console.log(response.data.data);
-                  setWebsite(response.data.data.password.website);
-                  setUsername(response.data.data.password.username);
-                  setEmail(response.data.data.password.email);
-                  setPassword(response.data.data.password.password);
+                  // setWebsite(response.data.data.password.website);
+                  // setUsername(response.data.data.password.username);
+                  // setEmail(response.data.data.password.email);
+                  // setPassword(response.data.data.password.password);
             }
             fetchData()
       }, []);

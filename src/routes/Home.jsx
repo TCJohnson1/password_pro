@@ -9,8 +9,11 @@ export default class Home extends Component {
             return (
                   <div>
                         <Header />
+                        <br/>
                         <AddAccount/>
+                        <br/>
                         <AccountList />
+                        <br/>
                         <Footer />
                   </div>
             )
