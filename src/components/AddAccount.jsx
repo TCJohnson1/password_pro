@@ -29,7 +29,7 @@ const AddAccount = () => {
             return (
                   <div className="row mb-3">
                         <div className="w-50 mx-auto">
-                        <form action="">
+                        <form className="align-center" action="">
                                     <label for="colFormLabelSm" 
                                     class="col-sm-2 col-form-label col-form-label-sm">Account:</label>
                                     <div className="col-sm-10">
