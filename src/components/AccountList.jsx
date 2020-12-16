@@ -1,9 +1,12 @@
 import React, { useEffect, useContext} from 'react'
 import PasswordPro from "../api/PasswordPro"
 import { AccountsContext } from '../context/AccountsContext'
+import {useHistory} from 'react-router-dom'
+
 
 const AccountList = (props) => {
       const {passwords, setPasswords} = useContext(AccountsContext)
+      let history = useHistory()
       useEffect(() => {
             const fetchData = async () => {
                   try{
@@ -24,6 +27,10 @@ const AccountList = (props) => {
             }catch (err) {
                   console.log(err)
             }
+      }
+
+      const handleUpdate = async (id) => {
+            history.push(`/passwords/${id}/update`)
       }
             return (
                   <div className="list-group">
@@ -47,7 +54,7 @@ const AccountList = (props) => {
                                           <td>{password.email}</td>
                                           <td>{password.password}</td>
                                           <td>
-                                                <button className="btn btn-secondary">Update</button>
+                                                <button onClick={()=> handleUpdate(password.id)}className="btn btn-secondary">Update</button>
                                           </td>
                                           <td>
                                                 <button onClick={() => handleDelete(password.id)} className="btn btn-danger">Delete</button>
