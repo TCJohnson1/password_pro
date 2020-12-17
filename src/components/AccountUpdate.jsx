@@ -33,7 +33,7 @@ const AccountUpdate = (props) => {
                   email,
                   password,
             })
-            history.push("/")
+            history.push("/home")
       }
 
       return (

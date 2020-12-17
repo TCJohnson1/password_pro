@@ -20,7 +20,7 @@ export default class LandingPage extends Component {
                                           <p class="lead">PasswordPro was created as a capstone project for General
                                           Assembly's Software Engineering Immersive program. PasswordPro is a fullstack password management application created using Postgresql, Express, React and Nodejs.</p>
                                           <p class="lead">
-                                          <a href="/signup" class="btn btn-secondary btn-lg">Create Account</a>
+                                          <a href="/join" class="btn btn-secondary btn-lg">Create Account</a>
                                           </p>
                               </main>
                               <footer class="mt-auto text-white-50">

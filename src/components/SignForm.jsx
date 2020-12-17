@@ -39,6 +39,7 @@ export default class SignForm extends Component {
                                           value="Register"
                                           id="register"
                                           >Register</button>
+                                          <br/>
                                           <a class="nav-link" href="/join">Don't have an account? Register here.</a>
                                     </div>
                               </form>

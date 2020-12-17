@@ -76,11 +76,8 @@ export default class Signup extends Component {
                               value="Register"
                               id="register"
                               >Register</button>
-                              <br></br>
-                              <a to="/signin" 
-                              className="login-link">
-                              Already registered? Signin here.
-                              </a>
+                              <br/>
+                              <a class="nav-link" href="/signin">Already have an account? Signin here.</a>
                         </div>
                         </form>
                         </div>
@@ -88,3 +85,5 @@ export default class Signup extends Component {
             )
       }
 }
+
+
