@@ -6,6 +6,8 @@
 ## What is it?
 Fullstack password management app created using Postgresql, Express, React and Nodejs. This repo contains the backend server for the app.
 
+![Image of App](/images/passwordpro.png)
+
 ## Technologies Used
 
 * [React.js](https://reactjs.org/)
